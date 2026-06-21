@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  firewall:
+    image: alpine
+    container_name: firewall
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ./iptables_setup.sh:/iptables_setup.sh
+    command: ["sh", "-c", "chmod +x /iptables_setup.sh && /iptables_setup.sh && tail -f /dev/null"]

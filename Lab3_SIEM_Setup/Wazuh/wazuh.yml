@@ -1,0 +1,13 @@
+
+#### 2. `Wazuh/wazuh.yml`
+
+```yaml
+# Конфигурационный файл Wazuh
+
+wazuh:
+  # Настройки Wazuh
+  cluster:
+    enabled: false
+  api:
+    enabled: true
+    port: 55000

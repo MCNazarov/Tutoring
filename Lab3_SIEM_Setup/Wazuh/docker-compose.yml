@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  wazuh:
+    image: wazuh/wazuh
+    container_name: wazuh
+    ports:
+      - "55000:55000"
+      - "1514:1514/udp"
+      - "1515:1515"
+    volumes:
+      - ./wazuh.yml:/var/ossec/etc/ossec.conf
+    environment:
+      - WAZUH_API=yes

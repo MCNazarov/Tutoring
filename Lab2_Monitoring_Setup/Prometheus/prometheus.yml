@@ -1,0 +1,29 @@
+```yaml
+# Конфигурационный файл Prometheus
+
+global:
+  scrape_interval: 15s  # Интервал сбора метрик
+
+scrape_configs:
+  - job_name: 'windows_servers'
+    static_configs:
+      - targets: 
+          - "{{ windows_servers[0].host }}:9182"  # IP адреса Windows серверов
+          - "{{ windows_servers[1].host }}:9182"
+
+  - job_name: 'windows_10_servers'
+    static_configs:
+      - targets: 
+          - "{{ windows_10_servers[0].host }}:9182"  # IP адреса Windows 10 серверов
+          - "{{ windows_10_servers[1].host }}:9182"
+
+  - job_name: 'ubuntu_servers'
+    static_configs:
+      - targets: 
+          - "{{ ubuntu_servers[0].host }}:9100"  # IP адреса Ubuntu серверов
+          - "{{ ubuntu_servers[1].host }}:9100"
+
+  - job_name: 'kali_linux'
+    static_configs:
+      - targets: 
+          - "{{ kali_linux.host }}:9100"  # IP адрес Kali Linux

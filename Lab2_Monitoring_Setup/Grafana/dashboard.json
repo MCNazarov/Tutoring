@@ -1,0 +1,59 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": "monitoring-dashboard",
+    "title": "Monitoring Dashboard",
+    "tags": [],
+    "timezone": "browser",
+    "schemaVersion": 26,
+    "version": 1,
+    "panels": [
+      {
+        "type": "graph",
+        "title": "CPU Usage",
+        "targets": [
+          {
+            "target": "avg(rate(node_cpu_seconds_total[1m])) by (instance)",
+            "refId": "A"
+          }
+        ],
+        "xaxis": {
+          "mode": "time"
+        },
+        "yaxes": [
+          {
+            "format": "percent",
+            "min": 0,
+            "max": 1
+          },
+          {
+            "format": "short"
+          }
+        ]
+      },
+      {
+        "type": "graph",
+        "title": "Memory Usage",
+        "targets": [
+          {
+            "target": "avg(node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes) by (instance)",
+            "refId": "B"
+          }
+        ],
+        "xaxis": {
+          "mode": "time"
+        },
+        "yaxes": [
+          {
+            "format": "percent",
+            "min": 0,
+            "max": 1
+          },
+          {
+            "format": "short"
+          }
+        ]
+      }
+    ]
+  }
+}

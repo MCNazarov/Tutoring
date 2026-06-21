@@ -1,0 +1,27 @@
+# Файл переменных для Ansible
+
+# SSH ключи
+ssh_key_path: /path/to/private/key
+
+# Данные для подключения к Windows серверам
+windows_servers:
+  - user: Administrator
+    password: your_password_here
+  - user: Administrator
+    password: your_password_here
+
+# Данные для подключения к Windows 10 серверам
+windows_10_servers:
+  - user: Administrator
+    password: your_password_here
+  - user: Administrator
+    password: your_password_here
+
+# Данные для подключения к Ubuntu серверам
+ubuntu_servers:
+  - user: ubuntu
+  - user: ubuntu
+
+# Данные для подключения к Kali Linux
+kali_linux:
+  user: kali

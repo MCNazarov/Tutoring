@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  openvpn:
+    image: kylemanna/openvpn
+    container_name: openvpn
+    ports:
+      - "1194:1194/udp"
+    volumes:
+      - ./openvpn_data:/etc/openvpn
+    environment:
+      - OVPN_DATA=openvpn_data
+    command: ["ovpn_genconfig", "-u", "udp://YOUR_VPN_SERVER_IP", "&&", "ovpn_initpki", "&&", "openvpn", "--config", "/etc/openvpn/openvpn.conf"]

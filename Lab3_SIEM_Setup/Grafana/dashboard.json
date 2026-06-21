@@ -1,0 +1,57 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": "wazuh-dashboard",
+    "title": "Wazuh Monitoring Dashboard",
+    "tags": [],
+    "timezone": "browser",
+    "schemaVersion": 26,
+    "version": 1,
+    "panels": [
+      {
+        "type": "graph",
+        "title": "Alerts",
+        "targets": [
+          {
+            "target": "count(wazuh_alerts)",
+            "refId": "A"
+          }
+        ],
+        "xaxis": {
+          "mode": "time"
+        },
+        "yaxes": [
+          {
+            "format": "short",
+            "min": 0
+          },
+          {
+            "format": "short"
+          }
+        ]
+      },
+      {
+        "type": "graph",
+        "title": "Active Agents",
+        "targets": [
+          {
+            "target": "count(wazuh_agents)",
+            "refId": "B"
+          }
+        ],
+        "xaxis": {
+          "mode": "time"
+        },
+        "yaxes": [
+          {
+            "format": "short",
+            "min": 0
+          },
+          {
+            "format": "short"
+          }
+        ]
+      }
+    ]
+  }
+}
